@@ -47,11 +47,11 @@ export const detailsOrder =(orderId) => async(dispatch, getState) => {
     }
 };
 
-export const payOrder =(order, paymentResult) => (dispatch, getState) => {
+export const payOrder =(order, paymentResult) => async(dispatch, getState) => {
   dispatch({type: ORDER_PAY_REQUEST, payload: {order, paymentResult} });
   const {
       userSignin: {userInfo},
-     } =getState();
+     } = getState();
      try {
        const {data} =Axios.put(`api/orders/${order._id}/pay`,paymentResult, {
            headers:{Authorization:`Barer ${userInfo.token}`},

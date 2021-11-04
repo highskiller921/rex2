@@ -46,7 +46,7 @@ orderRouter.put('/:id/pay',isAuth, expressAsyncHandler(async (req, res) =>{
             id: req.body.id, 
             status: req.body.status, 
             update_time: req.body.update_time, 
-            email_address: req.body.email_address
+            email_address: req.body.email_address,
         };
        const updateOrder =await order.save();
        res.send({message: 'Order Paid',order: updateOrder}); 

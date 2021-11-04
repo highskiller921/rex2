@@ -18,7 +18,7 @@ export default function OrderScreen(props) {
     const {
         loading: loadingPay, 
         error: errorPay, 
-        success: successPay
+        success: successPay,
      } = orderPay;
     const dispatch = useDispatch();
     useEffect(() => {
