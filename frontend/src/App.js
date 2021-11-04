@@ -5,6 +5,7 @@ import { signout } from './actions/userActions';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -42,9 +43,14 @@ function App() {
                          {userInfo.name}<i className="fas fa-caret-down"></i>{' '}
                        </Link>
                        <ul className = "dropdown-content">
-                         <Link to= "#signout" onClick={signoutHandler}>
-                           Sign Out
-                         </Link>
+                         <li>
+                           <Link to="/orderhistory">Order History</Link>
+                         </li>
+                         <li>
+                          <Link to= "#signout" onClick={signoutHandler}>
+                            Sign Out
+                          </Link>
+                         </li>
                        </ul>
                      </div>
                    ) :
@@ -64,6 +70,7 @@ function App() {
              <Route path="/register" component={ RegisterScreen }></Route>
              <Route path="/payment" component={ PaymentMethodScreen }></Route>
              <Route path="/placeorder" component={ PlaceOrderScreen }></Route>
+             <Route path="/orderhistory" component={ OrderHistoryScreen }></Route>
              <Route path="/order/:id" component={ OrderScreen }></Route>
              <Route path="/" component={HomeScreen} exact></Route>
           
